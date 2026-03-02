@@ -1,5 +1,5 @@
-import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
-import { Mic, Zap, Globe, Shield, ChevronRight, Waves } from "lucide-react";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { Zap, Globe, Shield, ChevronRight, Waves } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
@@ -31,9 +31,15 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <OrganizationSwitcher />
-          <UserButton />
+        <div className="flex items-center gap-2">
+          <SignInButton mode="modal">
+            <Button variant="ghost" size="sm">
+              Sign in
+            </Button>
+          </SignInButton>
+          <SignUpButton mode="modal">
+            <Button size="sm">Sign up</Button>
+          </SignUpButton>
         </div>
       </nav>
 

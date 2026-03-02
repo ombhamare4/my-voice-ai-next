@@ -5,10 +5,28 @@ import { NextResponse } from "next/server";
 const isPublicRoute = createRouteMatcher(["/sign-in(.*)", "/sign-up(.*)"]);
 
 //Private routes
-const isOrgSelectionRoute = createRouteMatcher(["/org-selection(.*)"]);
+const isOrgSelectionRoute = createRouteMatcher([
+  "/org-selection(.*)",
+  "/dashboard(.*)",
+]);
 
 export default clerkMiddleware(async (auth, req) => {
   const { userId, orgId } = await auth();
+  const isHomeRoute = req.nextUrl.pathname === "/";
+
+  if (isHomeRoute) {
+    if (userId && orgId) {
+      const dashboard = new URL("/dashboard", req.url);
+      return NextResponse.redirect(dashboard);
+    }
+
+    if (userId && !orgId) {
+      const orgSelection = new URL("/org-selection", req.url);
+      return NextResponse.redirect(orgSelection);
+    }
+
+    return NextResponse.next();
+  }
 
   // Everyon go here
   if (isPublicRoute(req)) {
