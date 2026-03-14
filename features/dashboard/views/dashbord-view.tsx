@@ -2,6 +2,7 @@ import { HeroPattern } from "../components/hero-pattern";
 import { PageHeader } from "@/components/page-header";
 import DashbordHeader from "@/features/dashboard/components/dashboard-header";
 import { TextInputPannel } from "../components/text-input-pannel";
+import { QuickActionsPannel } from "../components/quick-actions-panel";
 export const DashboardView = () => {
   return (
     <div className="relative">
@@ -10,6 +11,7 @@ export const DashboardView = () => {
       <div className="relative space-y-8 p-4 lg:p-16">
         <DashbordHeader />
         <TextInputPannel />
+        <QuickActionsPannel />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const DashbordHeader = () => {
   const { user, isLoaded } = useUser();
-
+  const MAIL_TO = "om.rubiksdev@gmail.com";
   return (
 
     <div className="flex items-center justify-between">
@@ -26,14 +26,14 @@ const DashbordHeader = () => {
       </div>
       <div className="lg:flex items-center gap-3 hidden">
         <Button variant="secondary" size="sm" asChild>
-          <Link href={`mailto:${process.env.CONTACT_EMAIL}`}>
+          <Link href={`mailto:${MAIL_TO}`}>
             {" "}
             <ThumbsUp />
             <span className="hidden lg:block">Feedback</span>
           </Link>
         </Button>
         <Button variant="secondary" size="sm" asChild>
-          <Link href={`mailto:${process.env.CONTACT_EMAIL}`}>
+          <Link href={`mailto:${MAIL_TO}`}>
             {" "}
             <Headphones />
             <span className="hidden lg:block">Need Help?</span>
