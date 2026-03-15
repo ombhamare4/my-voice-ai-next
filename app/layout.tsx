@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Voice AI",
+  title: {
+    default: "My Voice AI",
+    template: "%s | My Voice AI",
+  },
   description:
     "My Voice AI is a cutting‑edge voice cloning and synthesis platform that empowers creators, businesses, and developers to generate realistic, personalized voices with ease. Built with modern full‑stack technologies, it offers seamless integration, high‑quality audio output, and customizable features for podcasts, content creation, customer support, and accessibility solutions. Whether you’re building interactive applications or enhancing brand identity, My Voice AI delivers natural speech experiences that sound authentic and engaging.",
 };

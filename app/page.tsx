@@ -3,7 +3,31 @@ import { Zap, Globe, Shield, ChevronRight, Waves } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Voice AI",
+};
+
+const NavigationsItems = [
+  {
+    name: "Features",
+    href: "/",
+  },
+  {
+    name: "Pricing",
+    href: "/pricing",
+  },
+  {
+    name: "Docs",
+    href: "/",
+  },
+  {
+    name: "Blog",
+    href: "/",
+  },
+];
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -20,14 +44,15 @@ export default function Home() {
         </div>
 
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          {["Features", "Pricing", "Docs", "Blog"].map((item) => (
-            <a
-              key={item}
-              href="#"
+          {NavigationsItems.map((item) => (
+            
+            <Link
+              key={item.name}
+              href={item.href}
               className="hover:text-foreground transition-colors duration-200"
             >
-              {item}
-            </a>
+              {item.name}
+            </Link>
           ))}
         </div>
 

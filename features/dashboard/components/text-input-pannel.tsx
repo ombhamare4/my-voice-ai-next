@@ -6,7 +6,7 @@ import { Coins, Pencil, Brain } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { TEXT_MAX_LENGTH } from "@/features/text-to-speech/data/constants";
+import { TEXT_MAX_LENGTH, COST_PER_CHAR } from "@/features/text-to-speech/data/constants";
 
 export const TextInputPannel = () => {
   const [text, setText] = useState("");
@@ -46,7 +46,7 @@ export const TextInputPannel = () => {
                 ) : (
                   <>
                     <span className="tabular-nums">
-                      ${(text.length * 0.0003).toFixed(4)}
+                      ${(text.length * COST_PER_CHAR).toFixed(4)}
                     </span>
                   </>
                 )}

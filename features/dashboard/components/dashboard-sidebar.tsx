@@ -138,7 +138,7 @@ const DashboardSidebar = () => {
           <span className="group-data-[collapsible=icon]:hidden font-semibold text-lg tracking-tighter text-foreground">
             My Vocie AI
           </span>
-          <SidebarTrigger className="ml-auto lg-hidden" />
+          <SidebarTrigger className="ml-auto  group-data-[collapsible=icon]:hidden" />
         </div>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -179,10 +179,18 @@ const DashboardSidebar = () => {
               asChild
               className="h-9 px-3 py-2 text-[13px] tracking-tight font-medium border border-transparent"
             >
-              <button onClick={() => document.documentElement.classList.toggle("dark")}>
+              <button
+                onClick={() =>
+                  document.documentElement.classList.toggle("dark")
+                }
+              >
                 <span className="mr-auto">Theme</span>
-                <span className="ml-2 text-muted-foreground dark:hidden">Light</span>
-                <span className="ml-2 text-muted-foreground hidden dark:inline">Dark</span>
+                <span className="ml-2 text-muted-foreground dark:hidden">
+                  Light
+                </span>
+                <span className="ml-2 text-muted-foreground hidden dark:inline">
+                  Dark
+                </span>
               </button>
             </SidebarMenuButton>
           </SidebarMenuItem>

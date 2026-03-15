@@ -1,0 +1,1 @@
+export const MAIL_TO = "om.rubiksdev@gmail.com"

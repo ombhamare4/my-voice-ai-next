@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { Headphones, ThumbsUp } from "lucide-react";
-
 export const PageHeader = ({
   title,
   className,
